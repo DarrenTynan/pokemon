@@ -13,10 +13,6 @@
     <div class="container">
         <main>
             @yield('contents')
-
-            {{--Insert if statement - depending on outcome yield display--}}
-
-            @yield('details')
         </main>
     </div>
 

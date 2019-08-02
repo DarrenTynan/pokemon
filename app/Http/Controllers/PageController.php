@@ -13,21 +13,10 @@ class PageController extends Controller
      */
     public function index()
     {
+        // Get ALL pokemon's.
         $url = 'https://pokeapi.co/api/v2/pokemon/';
-        $data = json_decode(file_get_contents($url), true);
-        return view('pokemon')->withData($data);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index2()
-    {
-        $url = 'https://pokeapi.co/api/v2/pokemon/';
-        $data = json_decode(file_get_contents($url), true);
-        return view('pokemon2')->withData($data);
+        $pokemons = json_decode(file_get_contents($url), true);
+        return view('pokemonSPA', compact('pokemons'));
     }
 
     /**
@@ -96,65 +85,35 @@ class PageController extends Controller
         //
     }
 
-    public function details($id)
-    {
-        // Pokemon
-        $url = 'https://pokeapi.co/api/v2/pokemon/' . $id;
-        $data = json_decode(file_get_contents($url), true);
-
-//        dd($data['species']['url']);
-
-        // Species
-        $url_1 = $data['species']['url'];
-//        $url_1 = 'https://pokeapi.co/api/v2/pokemon/' . $id;
-        $species = json_decode(file_get_contents($url_1), true);
-
-//        ['data' => $data]
-//        compact('data')
-//        ['data' => $data, 'data_1' => $data_1]
-//        compact('data', 'data_1')
-
-//        dd('debug');
-        return view('details', compact('data', 'species'));
-    }
-
 
     /**
-     * Display the details of the specified resource.
+     * Return json data.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function details2($id)
+    public function getDetails()
     {
-        // Pokemon
-        $url = 'https://pokeapi.co/api/v2/pokemon/' . $id;
-        $pokemon = json_decode(file_get_contents($url), true);
-
-        // Species
-        $url_1 = $pokemon['species']['url'];
-        $species = json_decode(file_get_contents($url_1), true);
-
-        return view('details2', compact('pokemon', 'species'));
-    }
-
-    public function compact()
-    {
-        if(isset($_GET['id']))
+        // Is there a id set?
+        if(isset($_POST['id']))
         {
-            $id = $_GET['id'];
+            $id = $_POST['id'];
 
-            // Pokemon
+            // All pokemon's
+            $url = 'https://pokeapi.co/api/v2/pokemon/';
+            $pokemons = json_decode(file_get_contents($url), true);
+
+            // Single Pokemon
             $url = 'https://pokeapi.co/api/v2/pokemon/' . $id;
             $pokemon = json_decode(file_get_contents($url), true);
 
-            // Species
-            $url_1 = $pokemon['species']['url'];
-            $species = json_decode(file_get_contents($url_1), true);
+            // Single pokemon - Species
+            $url = $pokemon['species']['url'];
+            $species = json_decode(file_get_contents($url), true);
 
-            return view('details2', compact('pokemon', 'species'));
-//            return 'Compact success: ' . $_GET['id'];
+            return view('pokemonSPA', compact('pokemon', 'pokemons', 'species'));
         }
-        return 'Compact fail';
+
+        return 'Get details fail';
     }
+
 }

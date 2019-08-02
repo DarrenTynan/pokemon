@@ -12,16 +12,17 @@
     <h2>Details</h2>
 
     {{-- Display front/back images --}}
-    <img src="{{ $data['sprites']['front_default'] }}">
-    <img src="{{ $data['sprites']['back_default'] }}">
+    {{--<img src="{{ $data['sprites']['front_default'] }}">--}}
+    {{--<img src="{{ $data['sprites']['back_default'] }}">--}}
     <br>
 
     {{-- Display types --}}
-    @foreach($data['types'] as $item)
-        Slot: {{ $item['slot'] }} Type: {{ $item['type']['name'] }}
-        <br>
-    @endforeach
+    {{--@foreach($data['types'] as $item)--}}
+        {{--Slot: {{ $item['slot'] }} Type: {{ $item['type']['name'] }}--}}
+        {{--<br>--}}
+    {{--@endforeach--}}
     <br>
+
 
     {{-- Display Stats --}}
     @foreach($data['stats'] as $item)
@@ -37,8 +38,8 @@
     @endforeach
     <br>
 
-    <p>Height: {{ $data['height'] }}</p>
-    <p>Weight: {{ $data['weight'] }}</p>
+    {{--<p>Height: {{ $data['height'] }}</p>--}}
+    {{--<p>Weight: {{ $data['weight'] }}</p>--}}
 
     <p>Species Name: {{ $data['species']['name'] }}</p>
 
