@@ -1,4 +1,4 @@
-{{-- pokemon2 --}}
+{{-- pokemonSPA --}}
 {{-- The idea is for a single page app --}}
 
 @extends('layouts.app')

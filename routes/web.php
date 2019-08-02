@@ -16,13 +16,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pokemon', 'PageController@index');
-
-Route::get('/details/{id}', ['uses' => 'PageController@details']);
-Route::get('/details2/{id}', ['uses' => 'PageController@details2']);
-
-//Route::get('/pokemonCompact/{id}', ['uses' => 'PageController@compact']);
-Route::get('/pokemonCompact', 'PageController@compact');
+//Route::get('/pokemon', 'PageController@index');
+//
+//Route::get('/details/{id}', ['uses' => 'PageController@details']);
+//Route::get('/details2/{id}', ['uses' => 'PageController@details2']);
+//
+////Route::get('/pokemonCompact/{id}', ['uses' => 'PageController@compact']);
+//Route::get('/pokemonCompact', 'PageController@compact');
 
 
 
