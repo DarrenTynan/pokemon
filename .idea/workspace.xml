@@ -214,7 +214,7 @@
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="403" />
     <option name="width" value="1432" />
     <option name="height" value="1047" />
@@ -326,15 +326,15 @@
       <workItem from="1564476773549" duration="14054000" />
       <workItem from="1564565025510" duration="17058000" />
       <workItem from="1564643243208" duration="27699000" />
-      <workItem from="1564729968271" duration="14128000" />
+      <workItem from="1564729968271" duration="13718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72939000" />
+    <option name="totallyTimeSpent" value="72529000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.27238807" />
